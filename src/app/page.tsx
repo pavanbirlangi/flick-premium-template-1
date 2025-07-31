@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import "./template.css";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -41,7 +42,7 @@ const Page = () => {
 
     // Scroll animations
     const animateOnScroll = () => {
-      const animatedElements = document.querySelectorAll('.animate-on-scroll, .slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down, .scale-in, .rotate-in, .bounce-in, .fade-in');
+      const animatedElements = document.querySelectorAll('.animate-on-scroll, .slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down, .scale-in, .rotate-in, .bounce-in, .fade-in, .fade-in-up');
       
       animatedElements.forEach((element) => {
         const elementTop = element.getBoundingClientRect().top;
@@ -62,6 +63,43 @@ const Page = () => {
       });
     };
 
+    // Mobile menu functionality
+    const navToggle = document.getElementById('nav-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const navClose = document.querySelector('.nav-close');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Show menu
+    const showMenu = () => {
+      if (sidebar) {
+        sidebar.classList.add('show-sidebar');
+        document.body.classList.add('sidebar-open');
+      }
+    };
+
+    // Hide menu
+    const hideMenu = () => {
+      if (sidebar) {
+        sidebar.classList.remove('show-sidebar');
+        document.body.classList.remove('sidebar-open');
+      }
+    };
+
+    // Toggle menu when hamburger is clicked
+    if (navToggle) {
+      navToggle.addEventListener('click', showMenu);
+    }
+
+    // Hide menu when close button is clicked
+    if (navClose) {
+      navClose.addEventListener('click', hideMenu);
+    }
+
+    // Hide menu when nav link is clicked (for mobile)
+    navLinks.forEach(link => {
+      link.addEventListener('click', hideMenu);
+    });
+
     const handleScroll = () => {
       navHighlighter();
       animateOnScroll();
@@ -74,6 +112,17 @@ const Page = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      
+      // Cleanup event listeners
+      if (navToggle) {
+        navToggle.removeEventListener('click', showMenu);
+      }
+      if (navClose) {
+        navClose.removeEventListener('click', hideMenu);
+      }
+      navLinks.forEach(link => {
+        link.removeEventListener('click', hideMenu);
+      });
     };
   }, []);
 
@@ -266,32 +315,55 @@ const Page = () => {
 
               <div className="about-data slide-in-right">
                 <h3 className="about-heading">
-                  Hi, I'm Mariam Wallas, based in Canada
+                  Hi, I'm DevCapo, passionate developer
                 </h3>
                 <p className="about-description">
-                  I'm a web developer, with extensive knowledge and years of
-                  experience, working with quality work in web technologies, UI
-                  and UX design
+                  I'm a dedicated developer with strong foundation in modern web technologies. 
+                  Through academic projects and continuous learning, I've developed skills in 
+                  frontend and backend development.
                 </p>
 
                 <div className="about-info stagger-children">
+                  {/* For Fresh Graduates: Education, Projects, Passion */}
+                  <div className="about-box animate-on-scroll">
+                    <i className="uil uil-graduation-cap about-icon"></i>
+                    <h3 className="about-title">Education</h3>
+                    <span className="about-subtitle">BTech Graduate</span>
+                  </div>
+
+                  <div className="about-box animate-on-scroll">
+                    <i className="uil uil-trophy about-icon"></i>
+                    <h3 className="about-title">Projects</h3>
+                    <span className="about-subtitle">15+ Completed</span>
+                  </div>
+
+                  <div className="about-box animate-on-scroll">
+                    <i className="uil uil-rocket about-icon"></i>
+                    <h3 className="about-title">Passion</h3>
+                    <span className="about-subtitle">Always Learning</span>
+                  </div>
+
+                  {/* Alternative for Experienced Candidates:
+                  
                   <div className="about-box animate-on-scroll">
                     <i className="uil uil-award about-icon"></i>
                     <h3 className="about-title">Experience</h3>
-                    <span className="about-subtitle">10 + Years</span>
+                    <span className="about-subtitle">3+ Years</span>
                   </div>
 
                   <div className="about-box animate-on-scroll">
                     <i className="uil uil-suitcase-alt about-icon"></i>
                     <h3 className="about-title">Completed</h3>
-                    <span className="about-subtitle">60 + Projects</span>
+                    <span className="about-subtitle">25+ Projects</span>
                   </div>
 
                   <div className="about-box animate-on-scroll">
-                    <i className="uil uil-headphones-alt about-icon"></i>
-                    <h3 className="about-title">Support</h3>
-                    <span className="about-subtitle">Online 24/7</span>
+                    <i className="uil uil-users-alt about-icon"></i>
+                    <h3 className="about-title">Clients</h3>
+                    <span className="about-subtitle">Happy Partners</span>
                   </div>
+                  
+                  */}
                 </div>
 
                 <a href="#contact" className="button bounce-in">
