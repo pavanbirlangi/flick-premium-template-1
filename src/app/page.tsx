@@ -786,10 +786,6 @@ const Page = () => {
                       ></i>
 
                       <h3 className="services-modal-title">Web Designer</h3>
-                      <p className="services-modal-description">
-                        I offer services with more than 3 years of experience
-                        with quality work to clients and companies
-                      </p>
 
                       <ul className="services-modal-services grid">
                         <li className="services-modal-service">
@@ -803,6 +799,20 @@ const Page = () => {
                           <i className="uil uil-check-circle services-modal-icon"></i>
                           <p className="services-modal-info">
                             Web Page Development
+                          </p>
+                        </li>
+
+                        <li className="services-modal-service">
+                          <i className="uil uil-check-circle services-modal-icon"></i>
+                          <p className="services-modal-info">
+                            Responsive Design
+                          </p>
+                        </li>
+
+                        <li className="services-modal-service">
+                          <i className="uil uil-check-circle services-modal-icon"></i>
+                          <p className="services-modal-info">
+                            Performance Optimization
                           </p>
                         </li>
                       </ul>
@@ -832,10 +842,6 @@ const Page = () => {
                       ></i>
 
                       <h3 className="services-modal-title">UI/UX Designer</h3>
-                      <p className="services-modal-description">
-                        I offer services with more than 5 years of experience
-                        with quality work to clients and companies
-                      </p>
 
                       <ul className="services-modal-services grid">
                         <li className="services-modal-service">
@@ -846,6 +852,16 @@ const Page = () => {
                         <li className="services-modal-service">
                           <i className="uil uil-check-circle services-modal-icon"></i>
                           <p className="services-modal-info">User Research</p>
+                        </li>
+
+                        <li className="services-modal-service">
+                          <i className="uil uil-check-circle services-modal-icon"></i>
+                          <p className="services-modal-info">Wireframing & Prototyping</p>
+                        </li>
+
+                        <li className="services-modal-service">
+                          <i className="uil uil-check-circle services-modal-icon"></i>
+                          <p className="services-modal-info">Design Systems</p>
                         </li>
                       </ul>
                     </div>
@@ -874,10 +890,6 @@ const Page = () => {
                       ></i>
 
                       <h3 className="services-modal-title">Mobile Developer</h3>
-                      <p className="services-modal-description">
-                        I offer mobile development services with more than 3 years of experience
-                        creating native and cross-platform mobile applications
-                      </p>
 
                       <ul className="services-modal-services grid">
                         <li className="services-modal-service">
@@ -888,6 +900,16 @@ const Page = () => {
                         <li className="services-modal-service">
                           <i className="uil uil-check-circle services-modal-icon"></i>
                           <p className="services-modal-info">iOS & Android Apps</p>
+                        </li>
+
+                        <li className="services-modal-service">
+                          <i className="uil uil-check-circle services-modal-icon"></i>
+                          <p className="services-modal-info">Cross-Platform Development</p>
+                        </li>
+
+                        <li className="services-modal-service">
+                          <i className="uil uil-check-circle services-modal-icon"></i>
+                          <p className="services-modal-info">App Store Deployment</p>
                         </li>
                       </ul>
                     </div>
